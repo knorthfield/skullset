@@ -132,5 +132,6 @@ struct WorkoutView: View {
         let (startedAt, finishedAt, day) = (workout.startedAt, workout.finishedAt!, workout.day)
         Task { await health.save(startedAt: startedAt, finishedAt: finishedAt, day: day) }
         ensureCurrentWorkout()
+        WorkoutReminder.schedule(for: Progression.nextDay(after: day), after: finishedAt)
     }
 }
