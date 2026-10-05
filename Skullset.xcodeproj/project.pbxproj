@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B67BB2EBA56A18D3FFC8B47 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4BA078757B9A9F34A296C77D /* PrivacyInfo.xcprivacy */; };
 		167A1A037D5DC60B03C332AA /* SkullsetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E217956B4C65E5C8F114778 /* SkullsetApp.swift */; };
 		1CA8836AF6CED5F08E21CD1A /* LiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF908889428BE502F56BCF2 /* LiftCard.swift */; };
 		3C1BDBE3B019B783C192AAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2FEC72D7B1BCB22805955E4F /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		4BA078757B9A9F34A296C77D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		4E217956B4C65E5C8F114778 /* SkullsetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullsetApp.swift; sourceTree = "<group>"; };
 		56D7ED09CF4066194E07FBDA /* Skullset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skullset.entitlements; sourceTree = "<group>"; };
 		622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */,
 				BD81037796AF1F101F2487CE /* Info.plist */,
+				4BA078757B9A9F34A296C77D /* PrivacyInfo.xcprivacy */,
 				56D7ED09CF4066194E07FBDA /* Skullset.entitlements */,
 				4E217956B4C65E5C8F114778 /* SkullsetApp.swift */,
 				784B856C9B26B080A225280F /* Health */,
@@ -190,6 +193,14 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					D8C9B3D4256F343EB7B9400A = {
+						DevelopmentTeam = UYV646HSVB;
+						ProvisioningStyle = Automatic;
+					};
+					DA7E552DAF879926DA7D9FDF = {
+						DevelopmentTeam = UYV646HSVB;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 6CF451F7F141EE1E54C1E84A /* Build configuration list for PBXProject "Skullset" */;
@@ -218,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1BDBE3B019B783C192AAE5 /* Assets.xcassets in Resources */,
+				0B67BB2EBA56A18D3FFC8B47 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,9 +364,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UYV646HSVB;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -410,9 +424,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UYV646HSVB;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

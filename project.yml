@@ -8,6 +8,8 @@ settings:
     SWIFT_VERSION: "6.0"
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: UYV646HSVB
+    CODE_SIGN_STYLE: Automatic
 targets:
   Skullset:
     type: application
@@ -26,6 +28,7 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         NSHealthShareUsageDescription: Skullset reads your bodyweight to show it with your chin-ups.
         NSHealthUpdateUsageDescription: Skullset saves your finished workouts to Apple Health.
+        ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.krisnorthfield.skullset
