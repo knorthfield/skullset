@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		167A1A037D5DC60B03C332AA /* SkullsetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E217956B4C65E5C8F114778 /* SkullsetApp.swift */; };
+		1CA8836AF6CED5F08E21CD1A /* LiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF908889428BE502F56BCF2 /* LiftCard.swift */; };
+		59BBB5196B1CD3C58381CA35 /* PlateCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */; };
+		5EBA419E27FBD5CA6F35B5C2 /* WeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFCD537A8806555006209C /* WeightUnit.swift */; };
+		6510296F2DD54C3BEFDCF311 /* SetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B992CFB12B13C319B6B019 /* SetButton.swift */; };
+		7059382DAD9EBA21C899E49B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6256334253151BAB27DB5 /* HistoryView.swift */; };
+		771F6F846FF44A1185C9AA43 /* ProgressChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB68642F2C68D95B45B62002 /* ProgressChartsView.swift */; };
+		99270DDA5198FDEF77E8CC85 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B556D28D9F1D7679BD7420 /* WorkoutView.swift */; };
+		BC63DD835063AFCAF42934B6 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC72D7B1BCB22805955E4F /* HealthStore.swift */; };
+		C64733106E43812882568500 /* ProgressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28676DEA8C247291BC00C4 /* ProgressionTests.swift */; };
+		CFB8C7B98F01201F76B328A0 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D3E63179E5091876EED203 /* Workout.swift */; };
+		D05F0B59EF6B8EC1EB8B83E9 /* RestTimerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E62BE33E5B8CB95BFC23F /* RestTimerBar.swift */; };
+		DDBF613C12598F1232385689 /* PlateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE34836963D845B86BFB118 /* PlateCalculator.swift */; };
+		DEED76EEFEBFBCAC7BB1A230 /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D17BEFA3952DA80BC8546 /* Progression.swift */; };
+		E08A23CA7ADB6FE1020E5C81 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7080AD2E511F3B71258E784 /* SettingsView.swift */; };
+		F5EE9F890BFF09486401AFE1 /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B153AAC7BDA2AD97C834B26 /* Lift.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07C7F03E6765F5AC04649A72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBDFD22DB2F97839463962C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8C9B3D4256F343EB7B9400A;
+			remoteInfo = Skullset;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FEC72D7B1BCB22805955E4F /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		4E217956B4C65E5C8F114778 /* SkullsetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullsetApp.swift; sourceTree = "<group>"; };
+		56D7ED09CF4066194E07FBDA /* Skullset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skullset.entitlements; sourceTree = "<group>"; };
+		65B556D28D9F1D7679BD7420 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		6ADFCD537A8806555006209C /* WeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightUnit.swift; sourceTree = "<group>"; };
+		7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateCalculatorTests.swift; sourceTree = "<group>"; };
+		83B6256334253151BAB27DB5 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		852D17BEFA3952DA80BC8546 /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
+		89B992CFB12B13C319B6B019 /* SetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetButton.swift; sourceTree = "<group>"; };
+		9B153AAC7BDA2AD97C834B26 /* Lift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
+		AEF908889428BE502F56BCF2 /* LiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftCard.swift; sourceTree = "<group>"; };
+		B7D3E63179E5091876EED203 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		B85BB3C7E6B0D562CFA0E3D9 /* Skullset.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Skullset.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CB6EEDF528D00F4C27E3A3 /* SkullsetTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SkullsetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD81037796AF1F101F2487CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C7080AD2E511F3B71258E784 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CB28676DEA8C247291BC00C4 /* ProgressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTests.swift; sourceTree = "<group>"; };
+		CB68642F2C68D95B45B62002 /* ProgressChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartsView.swift; sourceTree = "<group>"; };
+		EDE34836963D845B86BFB118 /* PlateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateCalculator.swift; sourceTree = "<group>"; };
+		F49E62BE33E5B8CB95BFC23F /* RestTimerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		078A91D32D3278E931D872EF /* Skullset */ = {
+			isa = PBXGroup;
+			children = (
+				BD81037796AF1F101F2487CE /* Info.plist */,
+				56D7ED09CF4066194E07FBDA /* Skullset.entitlements */,
+				4E217956B4C65E5C8F114778 /* SkullsetApp.swift */,
+				784B856C9B26B080A225280F /* Health */,
+				AC54E7A3EA092DD3206E14C7 /* Model */,
+				3FBC6D3311C17B66F9314F33 /* Views */,
+			);
+			path = Skullset;
+			sourceTree = "<group>";
+		};
+		3F98E634C83E9E5698E06A5A /* SkullsetTests */ = {
+			isa = PBXGroup;
+			children = (
+				7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */,
+				CB28676DEA8C247291BC00C4 /* ProgressionTests.swift */,
+			);
+			path = SkullsetTests;
+			sourceTree = "<group>";
+		};
+		3FBC6D3311C17B66F9314F33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83B6256334253151BAB27DB5 /* HistoryView.swift */,
+				AEF908889428BE502F56BCF2 /* LiftCard.swift */,
+				CB68642F2C68D95B45B62002 /* ProgressChartsView.swift */,
+				F49E62BE33E5B8CB95BFC23F /* RestTimerBar.swift */,
+				89B992CFB12B13C319B6B019 /* SetButton.swift */,
+				C7080AD2E511F3B71258E784 /* SettingsView.swift */,
+				65B556D28D9F1D7679BD7420 /* WorkoutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		784B856C9B26B080A225280F /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				2FEC72D7B1BCB22805955E4F /* HealthStore.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		AC54E7A3EA092DD3206E14C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B153AAC7BDA2AD97C834B26 /* Lift.swift */,
+				EDE34836963D845B86BFB118 /* PlateCalculator.swift */,
+				852D17BEFA3952DA80BC8546 /* Progression.swift */,
+				6ADFCD537A8806555006209C /* WeightUnit.swift */,
+				B7D3E63179E5091876EED203 /* Workout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFCEEAAD1203306E3CA94A66 = {
+			isa = PBXGroup;
+			children = (
+				078A91D32D3278E931D872EF /* Skullset */,
+				3F98E634C83E9E5698E06A5A /* SkullsetTests */,
+				E05EA7E61D68456114E79B56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E05EA7E61D68456114E79B56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B85BB3C7E6B0D562CFA0E3D9 /* Skullset.app */,
+				B9CB6EEDF528D00F4C27E3A3 /* SkullsetTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8C9B3D4256F343EB7B9400A /* Skullset */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F0CEADF873FA0FADFA399DE /* Build configuration list for PBXNativeTarget "Skullset" */;
+			buildPhases = (
+				036B389E3DADA7B350E67DBC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Skullset;
+			packageProductDependencies = (
+			);
+			productName = Skullset;
+			productReference = B85BB3C7E6B0D562CFA0E3D9 /* Skullset.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA7E552DAF879926DA7D9FDF /* SkullsetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DECA654AC7936AADD4F35B89 /* Build configuration list for PBXNativeTarget "SkullsetTests" */;
+			buildPhases = (
+				8496C210E1E5142EFDE3CF20 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55AB3C34742FAA1D8520BB36 /* PBXTargetDependency */,
+			);
+			name = SkullsetTests;
+			packageProductDependencies = (
+			);
+			productName = SkullsetTests;
+			productReference = B9CB6EEDF528D00F4C27E3A3 /* SkullsetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBDFD22DB2F97839463962C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 6CF451F7F141EE1E54C1E84A /* Build configuration list for PBXProject "Skullset" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CFCEEAAD1203306E3CA94A66;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E05EA7E61D68456114E79B56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8C9B3D4256F343EB7B9400A /* Skullset */,
+				DA7E552DAF879926DA7D9FDF /* SkullsetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		036B389E3DADA7B350E67DBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC63DD835063AFCAF42934B6 /* HealthStore.swift in Sources */,
+				7059382DAD9EBA21C899E49B /* HistoryView.swift in Sources */,
+				F5EE9F890BFF09486401AFE1 /* Lift.swift in Sources */,
+				1CA8836AF6CED5F08E21CD1A /* LiftCard.swift in Sources */,
+				DDBF613C12598F1232385689 /* PlateCalculator.swift in Sources */,
+				771F6F846FF44A1185C9AA43 /* ProgressChartsView.swift in Sources */,
+				DEED76EEFEBFBCAC7BB1A230 /* Progression.swift in Sources */,
+				D05F0B59EF6B8EC1EB8B83E9 /* RestTimerBar.swift in Sources */,
+				6510296F2DD54C3BEFDCF311 /* SetButton.swift in Sources */,
+				E08A23CA7ADB6FE1020E5C81 /* SettingsView.swift in Sources */,
+				167A1A037D5DC60B03C332AA /* SkullsetApp.swift in Sources */,
+				5EBA419E27FBD5CA6F35B5C2 /* WeightUnit.swift in Sources */,
+				CFB8C7B98F01201F76B328A0 /* Workout.swift in Sources */,
+				99270DDA5198FDEF77E8CC85 /* WorkoutView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8496C210E1E5142EFDE3CF20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59BBB5196B1CD3C58381CA35 /* PlateCalculatorTests.swift in Sources */,
+				C64733106E43812882568500 /* ProgressionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55AB3C34742FAA1D8520BB36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8C9B3D4256F343EB7B9400A /* Skullset */;
+			targetProxy = 07C7F03E6765F5AC04649A72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1EC1652B065B99E9080CCB87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisnorthfield.SkullsetTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Skullset.app/Skullset";
+			};
+			name = Release;
+		};
+		20146AFD09EFF3A61B85B4AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Skullset/Skullset.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Skullset/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisnorthfield.skullset;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		67D522250E1635FE7FD99E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisnorthfield.SkullsetTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Skullset.app/Skullset";
+			};
+			name = Debug;
+		};
+		A5A3CE6FCE588DCDED80FD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		B69D2CF83BA42DCF749F8818 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		B7002891F95ACDAD690AED5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Skullset/Skullset.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Skullset/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisnorthfield.skullset;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F0CEADF873FA0FADFA399DE /* Build configuration list for PBXNativeTarget "Skullset" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7002891F95ACDAD690AED5A /* Debug */,
+				20146AFD09EFF3A61B85B4AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6CF451F7F141EE1E54C1E84A /* Build configuration list for PBXProject "Skullset" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69D2CF83BA42DCF749F8818 /* Debug */,
+				A5A3CE6FCE588DCDED80FD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DECA654AC7936AADD4F35B89 /* Build configuration list for PBXNativeTarget "SkullsetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67D522250E1635FE7FD99E8C /* Debug */,
+				1EC1652B065B99E9080CCB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBDFD22DB2F97839463962C7 /* Project object */;
+}
