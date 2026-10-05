@@ -6,12 +6,18 @@ struct WorkoutView: View {
     @Environment(HealthStore.self) private var health
     @AppStorage("unit") private var unit: WeightUnit = .kg
     @AppStorage("restStartedAt") private var restStartedAt: Double = 0
+    @AppStorage("plates.kg") private var kilogramPlates = ""
+    @AppStorage("plates.lb") private var poundPlates = ""
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
     @State private var isShowingSettings = false
 
     private var current: Workout? { workouts.first { $0.finishedAt == nil } }
 
     private var finished: [Workout] { workouts.filter { $0.finishedAt != nil } }
+
+    private func plates(for unit: WeightUnit) -> [Double] {
+        unit.selectedPlates(from: unit == .kg ? kilogramPlates : poundPlates)
+    }
 
     var body: some View {
         NavigationStack {
@@ -23,6 +29,7 @@ struct WorkoutView: View {
                                 LiftCard(
                                     entry: entry,
                                     unit: current.unit,
+                                    plates: plates(for: current.unit),
                                     bodyweightKilograms: health.latestBodyweightKilograms,
                                     onSetLogged: { setLogged(in: current) }
                                 )
@@ -58,17 +65,21 @@ struct WorkoutView: View {
             await health.requestAuthorization()
             await RestTimer.requestPermission()
         }
-        .onChange(of: unit) {
-            if let current, !hasLoggedSets(current) {
-                context.delete(current)
-                try? context.save()
-            }
-            ensureCurrentWorkout()
-        }
+        .onChange(of: unit) { replanUnstartedWorkout() }
+        .onChange(of: kilogramPlates) { replanUnstartedWorkout() }
+        .onChange(of: poundPlates) { replanUnstartedWorkout() }
     }
 
     private func hasLoggedSets(_ workout: Workout) -> Bool {
         workout.entries.contains { $0.reps.contains { $0 != nil } }
+    }
+
+    private func replanUnstartedWorkout() {
+        if let current, !hasLoggedSets(current) {
+            context.delete(current)
+            try? context.save()
+        }
+        ensureCurrentWorkout()
     }
 
     /// There is always one unfinished workout, so the next session is ready to log.
@@ -91,7 +102,8 @@ struct WorkoutView: View {
                     lastWeight: entry.weight,
                     lastReps: entry.reps,
                     lastUnit: workout.unit,
-                    unit: unit
+                    unit: unit,
+                    plates: plates(for: unit)
                 )
             }
         }

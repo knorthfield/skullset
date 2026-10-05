@@ -3,6 +3,7 @@ import SwiftUI
 struct LiftCard: View {
     @Bindable var entry: LiftEntry
     let unit: WeightUnit
+    let plates: [Double]
     let bodyweightKilograms: Double?
     let onSetLogged: () -> Void
     @State private var isEditingWeight = false
@@ -37,7 +38,7 @@ struct LiftCard: View {
         }
         .padding(.vertical, 6)
         .sheet(isPresented: $isEditingWeight) {
-            WeightEditor(weight: $entry.weight, lift: entry.lift, unit: unit)
+            WeightEditor(weight: $entry.weight, lift: entry.lift, unit: unit, plates: plates)
                 .presentationDetents([.height(260)])
         }
     }
@@ -49,13 +50,15 @@ struct LiftCard: View {
     private var detail: String? {
         if entry.lift.isBodyweight {
             guard let bodyweightKilograms else { return nil }
-            let bodyweight = unit.roundToLoadable(WeightUnit.kg.convert(bodyweightKilograms, to: unit))
+            let bodyweight = (WeightUnit.kg.convert(bodyweightKilograms, to: unit) * 10).rounded() / 10
             return "Bodyweight \(unit.format(bodyweight)) + \(unit.format(entry.weight))"
         }
-        let plates = PlateCalculator.platesPerSide(for: entry.weight, unit: unit)
-        let platesText = plates.isEmpty
+        guard let platesPerSide = PlateCalculator.platesPerSide(for: entry.weight, unit: unit, plates: plates) else {
+            return "Can't load exactly with your plates"
+        }
+        let platesText = platesPerSide.isEmpty
             ? "Empty bar"
-            : plates.map { $0.formatted(.number.precision(.fractionLength(0...2))) }.joined(separator: " + ")
+            : platesPerSide.map { $0.formatted(.number.precision(.fractionLength(0...2))) }.joined(separator: " + ")
         return "Each side: \(platesText)"
     }
 
@@ -73,6 +76,7 @@ private struct WeightEditor: View {
     @Binding var weight: Double
     let lift: Lift
     let unit: WeightUnit
+    let plates: [Double]
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -83,9 +87,9 @@ private struct WeightEditor: View {
                     .monospacedDigit()
                     .contentTransition(.numericText(value: weight))
                 HStack(spacing: 32) {
-                    stepButton("minus", by: -step)
-                        .disabled(weight - step < minimum)
-                    stepButton("plus", by: step)
+                    stepButton("minus", to: lowerWeight)
+                        .disabled(weight <= minimum)
+                    stepButton("plus", to: higherWeight)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -103,9 +107,21 @@ private struct WeightEditor: View {
 
     private var minimum: Double { Progression.startingWeight(for: lift, unit: unit) }
 
-    private func stepButton(_ systemImage: String, by amount: Double) -> some View {
+    private var higherWeight: Double {
+        lift.isBodyweight
+            ? weight + step
+            : PlateCalculator.loadable(weight + step, unit: unit, plates: plates, rounding: .up)
+    }
+
+    private var lowerWeight: Double {
+        lift.isBodyweight
+            ? max(weight - step, minimum)
+            : PlateCalculator.loadable(weight - step, unit: unit, plates: plates, rounding: .down)
+    }
+
+    private func stepButton(_ systemImage: String, to newWeight: Double) -> some View {
         Button {
-            withAnimation { weight += amount }
+            withAnimation { weight = newWeight }
         } label: {
             Image(systemName: systemImage)
                 .font(.title2.weight(.semibold))

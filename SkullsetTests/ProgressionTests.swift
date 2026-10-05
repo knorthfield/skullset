@@ -2,8 +2,14 @@ import Testing
 @testable import Skullset
 
 struct ProgressionTests {
-    private func next(_ lift: Lift, _ weight: Double, _ reps: [Int?], from: WeightUnit = .kg, to: WeightUnit = .kg) -> Double {
-        Progression.nextWeight(for: lift, lastWeight: weight, lastReps: reps, lastUnit: from, unit: to)
+    private func next(
+        _ lift: Lift, _ weight: Double, _ reps: [Int?],
+        from: WeightUnit = .kg, to: WeightUnit = .kg, plates: [Double]? = nil
+    ) -> Double {
+        Progression.nextWeight(
+            for: lift, lastWeight: weight, lastReps: reps,
+            lastUnit: from, unit: to, plates: plates ?? to.defaultPlates
+        )
     }
 
     @Test func alternatesDays() {
@@ -42,6 +48,15 @@ struct ProgressionTests {
     @Test func chinUpsKeepTheirWeight() {
         #expect(next(.chinUp, 0, [5, 5, 12]) == 0)
         #expect(next(.chinUp, 5, [2, 1, 0]) == 5)
+    }
+
+    @Test func jumpsAreRoundedUpToYourPlates() {
+        #expect(next(.benchPress, 50, [5, 5, 5], plates: [20, 10, 5, 2.5, 1.25]) == 52.5)
+        #expect(next(.benchPress, 50, [5, 5, 5], plates: [20, 10, 5, 2.5, 0.25]) == 51)
+    }
+
+    @Test func deloadRoundsDownToYourPlates() {
+        #expect(next(.squat, 70, [3, 3, 3], plates: [20, 10, 5, 2.5]) == 60)
     }
 
     @Test func convertsUnitsToLoadableWeight() {

@@ -9,16 +9,30 @@ enum WeightUnit: String, Codable, CaseIterable, Identifiable {
 
     var barWeight: Double { self == .kg ? 20 : 45 }
 
-    /// Plates available per side, heaviest first.
-    var plates: [Double] {
+    /// Every plate size Settings offers, heaviest first.
+    var allPlates: [Double] {
+        switch self {
+        case .kg: [25, 20, 15, 10, 5, 2.5, 2, 1.5, 1.25, 1, 0.5, 0.25]
+        case .lb: [45, 35, 25, 15, 10, 5, 2.5, 1.25, 0.5, 0.25]
+        }
+    }
+
+    var defaultPlates: [Double] {
         switch self {
         case .kg: [25, 20, 15, 10, 5, 2.5, 1.25, 1, 0.25]
         case .lb: [45, 35, 25, 10, 5, 2.5, 1.25]
         }
     }
 
-    /// The smallest change that can be loaded on a bar: two of the smallest plate.
-    var smallestStep: Double { plates.last! * 2 }
+    /// Reads plates saved as a comma-separated string. Empty means the defaults.
+    func selectedPlates(from stored: String) -> [Double] {
+        let plates = stored.split(separator: ",").compactMap { Double($0) }
+        return plates.isEmpty ? defaultPlates : plates.sorted(by: >)
+    }
+
+    func storageString(for plates: [Double]) -> String {
+        plates.sorted(by: >).map { String($0) }.joined(separator: ",")
+    }
 
     func increment(for lift: Lift) -> Double {
         switch self {
@@ -33,10 +47,6 @@ enum WeightUnit: String, Codable, CaseIterable, Identifiable {
         case (.lb, .kg): weight / Self.poundsPerKilogram
         default: weight
         }
-    }
-
-    func roundToLoadable(_ weight: Double, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Double {
-        (weight / smallestStep).rounded(rule) * smallestStep
     }
 
     func format(_ weight: Double) -> String {

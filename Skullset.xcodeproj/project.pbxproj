@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		167A1A037D5DC60B03C332AA /* SkullsetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E217956B4C65E5C8F114778 /* SkullsetApp.swift */; };
 		1CA8836AF6CED5F08E21CD1A /* LiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF908889428BE502F56BCF2 /* LiftCard.swift */; };
+		3C1BDBE3B019B783C192AAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */; };
 		59BBB5196B1CD3C58381CA35 /* PlateCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */; };
 		5EBA419E27FBD5CA6F35B5C2 /* WeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFCD537A8806555006209C /* WeightUnit.swift */; };
 		6510296F2DD54C3BEFDCF311 /* SetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B992CFB12B13C319B6B019 /* SetButton.swift */; };
@@ -39,6 +40,7 @@
 		2FEC72D7B1BCB22805955E4F /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		4E217956B4C65E5C8F114778 /* SkullsetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullsetApp.swift; sourceTree = "<group>"; };
 		56D7ED09CF4066194E07FBDA /* Skullset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skullset.entitlements; sourceTree = "<group>"; };
+		622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65B556D28D9F1D7679BD7420 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		6ADFCD537A8806555006209C /* WeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightUnit.swift; sourceTree = "<group>"; };
 		7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateCalculatorTests.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		078A91D32D3278E931D872EF /* Skullset */ = {
 			isa = PBXGroup;
 			children = (
+				622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */,
 				BD81037796AF1F101F2487CE /* Info.plist */,
 				56D7ED09CF4066194E07FBDA /* Skullset.entitlements */,
 				4E217956B4C65E5C8F114778 /* SkullsetApp.swift */,
@@ -141,6 +144,7 @@
 			buildConfigurationList = 4F0CEADF873FA0FADFA399DE /* Build configuration list for PBXNativeTarget "Skullset" */;
 			buildPhases = (
 				036B389E3DADA7B350E67DBC /* Sources */,
+				B968D52C685A4528B73975F3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +205,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B968D52C685A4528B73975F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C1BDBE3B019B783C192AAE5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		036B389E3DADA7B350E67DBC /* Sources */ = {
