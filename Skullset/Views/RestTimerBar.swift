@@ -5,17 +5,15 @@ enum RestTimer {
     static let duration: TimeInterval = 180
     private static let notificationID = "rest"
 
-    static func requestPermission() async {
+    /// The first call shows the notification prompt, when the user starts their first rest.
+    static func scheduleNotification() async {
         _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound])
-    }
-
-    static func scheduleNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Rest over"
         content.body = "Time for your next set."
         content.sound = .default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: duration, repeats: false)
-        UNUserNotificationCenter.current().add(
+        try? await UNUserNotificationCenter.current().add(
             UNNotificationRequest(identifier: notificationID, content: content, trigger: trigger)
         )
     }

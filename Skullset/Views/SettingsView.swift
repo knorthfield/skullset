@@ -5,6 +5,7 @@ struct SettingsView: View {
     @AppStorage("plates.kg") private var kilogramPlates = ""
     @AppStorage("plates.lb") private var poundPlates = ""
     @Environment(\.dismiss) private var dismiss
+    @Environment(HealthStore.self) private var health
 
     var body: some View {
         NavigationStack {
@@ -23,6 +24,23 @@ struct SettingsView: View {
                     Text("Plates")
                 } footer: {
                     Text("Weights are rounded so they can be loaded with these plates.")
+                }
+
+                if health.isAvailable {
+                    Section {
+                        if health.hasRequestedAccess {
+                            Text("To change access, open the Health app and go to Sharing › Apps › Skullset.")
+                                .foregroundStyle(.secondary)
+                        } else {
+                            Button("Connect Apple Health") {
+                                Task { await health.requestAuthorization() }
+                            }
+                        }
+                    } header: {
+                        Text("Apple Health")
+                    } footer: {
+                        Text("Skullset reads your bodyweight and saves your workouts.")
+                    }
                 }
             }
             .navigationTitle("Settings")

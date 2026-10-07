@@ -17,13 +17,25 @@ final class HealthStore {
     private let bodyMass = HKQuantityType(.bodyMass)
 
     private(set) var latestBodyweightKilograms: Double?
+    /// True after the user has answered the Health prompt. Health does not tell apps if read access was given.
+    private(set) var hasRequestedAccess = false
 
-    private var isAvailable: Bool { HKHealthStore.isHealthDataAvailable() }
+    var isAvailable: Bool { HKHealthStore.isHealthDataAvailable() }
 
     func requestAuthorization() async {
         guard isAvailable else { return }
         try? await store.requestAuthorization(toShare: [.workoutType()], read: [bodyMass])
-        latestBodyweightKilograms = await bodyweightSamples(limit: 1).first?.kilograms
+        await refresh()
+    }
+
+    /// Never shows a prompt, so it is safe to call at launch.
+    func refresh() async {
+        guard isAvailable else { return }
+        let status = try? await store.statusForAuthorizationRequest(toShare: [.workoutType()], read: [bodyMass])
+        hasRequestedAccess = status == .unnecessary
+        if hasRequestedAccess {
+            latestBodyweightKilograms = await bodyweightSamples(limit: 1).first?.kilograms
+        }
     }
 
     /// Newest first.

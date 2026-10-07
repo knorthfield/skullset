@@ -61,4 +61,14 @@ Data Not Collected.
 2026 Kris Northfield
 
 ## Review notes
-No sign-in needed. Apple Health access is optional; the app works the same without it.
+1. Screen recording: attached. It starts at launch on an iPhone with iOS 27 and shows the full flow. The app has no account, no login, no user-generated content and no paid content.
+
+2. Purpose and audience: Skullset is a workout log for people who do the Greyskull LP barbell strength program (phrakture's variant). It is for beginner and intermediate lifters. The problem: in this program you must calculate the next weight after each workout from the reps you did. Skullset does this for you. It shows the sets for today, logs reps, runs a rest timer, shows which plates to load, and keeps history and progress charts.
+
+3. Instructions: no login or setup is needed. Open the app; Workout A shows. Tap a set to log 5 reps; tap again to remove a rep. On the last set, choose the number of reps. Tap "Finish Workout" to see Workout B with the next weights. The History and Progress tabs show past workouts and charts. The gear button on the Workout tab opens Settings, where you can set kg or lb and your plates. To use Apple Health (optional), tap Connect Apple Health in Settings. The app asks for notification permission when you log your first set, because the rest timer sends a notification.
+
+4. External services: none. The app makes no network requests. It uses only Apple frameworks on the device: SwiftData (local storage), HealthKit (optional: reads bodyweight, saves workouts), UserNotifications (rest timer alert) and Swift Charts.
+
+5. Regional differences: none. The app works the same in all regions.
+
+6. Regulated industry or third-party material: not applicable. Skullset is not a medical app and has no licensed content. Greyskull LP is a public training method; the app uses no third-party trademarks or material.

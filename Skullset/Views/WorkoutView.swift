@@ -62,8 +62,7 @@ struct WorkoutView: View {
         }
         .task {
             ensureCurrentWorkout()
-            await health.requestAuthorization()
-            await RestTimer.requestPermission()
+            await health.refresh()
         }
         .onChange(of: unit) { replanUnstartedWorkout() }
         .onChange(of: kilogramPlates) { replanUnstartedWorkout() }
@@ -75,11 +74,12 @@ struct WorkoutView: View {
     }
 
     private func replanUnstartedWorkout() {
-        if let current, !hasLoggedSets(current) {
-            context.delete(current)
-            try? context.save()
+        guard let current, !hasLoggedSets(current) else { return }
+        current.unit = unit
+        for entry in current.entries {
+            entry.weight = plannedWeight(for: entry.lift)
         }
-        ensureCurrentWorkout()
+        try? context.save()
     }
 
     /// There is always one unfinished workout, so the next session is ready to log.
@@ -114,7 +114,7 @@ struct WorkoutView: View {
         let loggedSets = workout.entries.flatMap(\.reps).compactMap { $0 }.count
         if loggedSets == 1 { workout.startedAt = .now }
         restStartedAt = Date.now.timeIntervalSince1970
-        RestTimer.scheduleNotification()
+        Task { await RestTimer.scheduleNotification() }
     }
 
     private func stopRestTimer() {
