@@ -24,6 +24,8 @@ targets:
       path: Skullset/Info.plist
       properties:
         CFBundleDisplayName: Skullset
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         NSHealthShareUsageDescription: Skullset reads your bodyweight to show it with your chin-ups.
