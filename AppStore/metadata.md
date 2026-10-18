@@ -4,7 +4,7 @@
 Skullset
 
 ## Subtitle (30)
-Greyskull LP workout tracker
+Phrak's Greyskull LP tracker
 
 ## Promotional text (170)
 Greyskull LP, phrakture's variant, with no setup. Open the app, lift, tap your reps. Skullset works out your next weights for you.
@@ -39,7 +39,7 @@ PRIVATE
 Skullset has no account, no ads and no tracking. Your data stays on your device.
 
 ## Keywords (100)
-greyskull,gslp,barbell,strength,lifting,5x5,linear progression,gym,log,squat,deadlift,bench,press
+phrak,phraks,phrakture,gslp,workout,5x5,barbell,strength,lifting,gym,log,beginner,linear,progression
 
 ## Category
 Primary: Health & Fitness. Secondary: none.
@@ -71,4 +71,4 @@ Data Not Collected.
 
 5. Regional differences: none. The app works the same in all regions.
 
-6. Regulated industry or third-party material: not applicable. Skullset is not a medical app and has no licensed content. Greyskull LP is a public training method; the app uses no third-party trademarks or material.
+6. Regulated industry or third-party material: not applicable. Skullset is not a medical app and has no licensed content. Greyskull LP is a public training method. "Phrak's Greyskull LP" is the public name of the variant the app uses (phrakture is the author's online name); the app uses no third-party trademarks or material.
