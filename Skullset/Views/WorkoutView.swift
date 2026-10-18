@@ -4,6 +4,7 @@ import SwiftUI
 struct WorkoutView: View {
     @Environment(\.modelContext) private var context
     @Environment(HealthStore.self) private var health
+    @Environment(\.scenePhase) private var scenePhase
     @AppStorage("unit") private var unit: WeightUnit = .kg
     @AppStorage("restStartedAt") private var restStartedAt: Double = 0
     @AppStorage("plates.kg") private var kilogramPlates = ""
@@ -62,7 +63,11 @@ struct WorkoutView: View {
         }
         .task {
             ensureCurrentWorkout()
+            replanAfterBreak()
             await health.refresh()
+        }
+        .onChange(of: scenePhase) {
+            if scenePhase == .active { replanAfterBreak() }
         }
         .onChange(of: unit) { replanUnstartedWorkout() }
         .onChange(of: kilogramPlates) { replanUnstartedWorkout() }
@@ -103,11 +108,22 @@ struct WorkoutView: View {
                     lastReps: entry.reps,
                     lastUnit: workout.unit,
                     unit: unit,
-                    plates: plates(for: unit)
+                    plates: plates(for: unit),
+                    daysSinceLastSession: daysSince(workout)
                 )
             }
         }
         return Progression.startingWeight(for: lift, unit: unit)
+    }
+
+    private func daysSince(_ workout: Workout) -> Int {
+        Calendar.current.dateComponents([.day], from: workout.finishedAt ?? workout.startedAt, to: .now).day ?? 0
+    }
+
+    /// The next workout is planned when the last one finishes, so plan it again after a break.
+    private func replanAfterBreak() {
+        guard let last = finished.first, daysSince(last) >= 14 else { return }
+        replanUnstartedWorkout()
     }
 
     private func setLogged(in workout: Workout) {

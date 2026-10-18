@@ -21,6 +21,7 @@ AUTOMATIC PROGRESSION
 • Get all your reps: the weight goes up next time.
 • 10 or more reps on the last set: the weight goes up twice as much.
 • Miss reps: the weight goes down 10%.
+• Take two weeks or more off: the weights go down so you can ease back in.
 • Chin-ups track your reps.
 
 BUILT FOR THE GYM

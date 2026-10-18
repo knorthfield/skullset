@@ -4,12 +4,42 @@ import Testing
 struct ProgressionTests {
     private func next(
         _ lift: Lift, _ weight: Double, _ reps: [Int?],
-        from: WeightUnit = .kg, to: WeightUnit = .kg, plates: [Double]? = nil
+        from: WeightUnit = .kg, to: WeightUnit = .kg, plates: [Double]? = nil, days: Int = 0
     ) -> Double {
         Progression.nextWeight(
             for: lift, lastWeight: weight, lastReps: reps,
-            lastUnit: from, unit: to, plates: plates ?? to.defaultPlates
+            lastUnit: from, unit: to, plates: plates ?? to.defaultPlates,
+            daysSinceLastSession: days
         )
+    }
+
+    @Test func lessThanTwoWeeksOffKeepsTheNormalRules() {
+        #expect(next(.squat, 100, [5, 5, 5], days: 13) == 102.5)
+        #expect(next(.squat, 100, [5, 5, 4], days: 13) == 90)
+    }
+
+    @Test func deloadsTenPercentForEachWeekOffAfterTheFirst() {
+        #expect(next(.squat, 100, [5, 5, 5], days: 14) == 90)
+        #expect(next(.squat, 100, [5, 5, 5], days: 21) == 80)
+        #expect(next(.squat, 100, [5, 5, 5], days: 35) == 60)
+    }
+
+    @Test func timeOffDeloadIsAtMostHalf() {
+        #expect(next(.squat, 100, [5, 5, 5], days: 56) == 50)
+        #expect(next(.squat, 100, [5, 5, 5], days: 365) == 50)
+    }
+
+    @Test func timeOffDeloadReplacesTheFailureDeload() {
+        #expect(next(.squat, 100, [5, 5, 4], days: 14) == 90)
+    }
+
+    @Test func timeOffDeloadRoundsDownAndNeverGoesBelowBar() {
+        #expect(next(.squat, 70, [5, 5, 5], plates: [20, 10, 5, 2.5], days: 14) == 60)
+        #expect(next(.overheadPress, 30, [5, 5, 5], days: 70) == 20)
+    }
+
+    @Test func chinUpsIgnoreTimeOff() {
+        #expect(next(.chinUp, 5, [5, 5, 5], days: 70) == 5)
     }
 
     @Test func alternatesDays() {
