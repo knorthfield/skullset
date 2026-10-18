@@ -23,7 +23,7 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Skullset reads your bodyweight to show it with your chin-ups.</string>
+	<string>Skullset reads your bodyweight to show it with your chin-ups, and your steps to show your daily progress.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Skullset saves your finished workouts to Apple Health.</string>
 	<key>UILaunchScreen</key>

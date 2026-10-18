@@ -9,14 +9,19 @@
 /* Begin PBXBuildFile section */
 		0B67BB2EBA56A18D3FFC8B47 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4BA078757B9A9F34A296C77D /* PrivacyInfo.xcprivacy */; };
 		167A1A037D5DC60B03C332AA /* SkullsetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E217956B4C65E5C8F114778 /* SkullsetApp.swift */; };
+		16B01997747EEED0D22FB32E /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82CA7A85F9812E3DB60BCC /* DailySteps.swift */; };
 		1CA8836AF6CED5F08E21CD1A /* LiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF908889428BE502F56BCF2 /* LiftCard.swift */; };
+		1CD3CD513B9DC0988BCDB691 /* SkullsetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EE6D7F8B88F793EAECCD6 /* SkullsetWidget.swift */; };
 		3C1BDBE3B019B783C192AAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622C8AFD3762AB8E3F05AA45 /* Assets.xcassets */; };
+		57930C312498EA313E08AF6F /* DailyStepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B23C3FECB997F07DD4781 /* DailyStepsTests.swift */; };
 		59BBB5196B1CD3C58381CA35 /* PlateCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */; };
 		5EBA419E27FBD5CA6F35B5C2 /* WeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFCD537A8806555006209C /* WeightUnit.swift */; };
 		6510296F2DD54C3BEFDCF311 /* SetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B992CFB12B13C319B6B019 /* SetButton.swift */; };
 		7059382DAD9EBA21C899E49B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6256334253151BAB27DB5 /* HistoryView.swift */; };
 		771F6F846FF44A1185C9AA43 /* ProgressChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB68642F2C68D95B45B62002 /* ProgressChartsView.swift */; };
+		913DB1C785D8BF96C07F5536 /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82CA7A85F9812E3DB60BCC /* DailySteps.swift */; };
 		99270DDA5198FDEF77E8CC85 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B556D28D9F1D7679BD7420 /* WorkoutView.swift */; };
+		B60AC68C78D5C987CD7C8967 /* SkullsetWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C6D489456FEC1F7A0A41C2D3 /* SkullsetWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BAE5D924119215B82A951728 /* WorkoutReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7DACD592295773A445EF14 /* WorkoutReminder.swift */; };
 		BC63DD835063AFCAF42934B6 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC72D7B1BCB22805955E4F /* HealthStore.swift */; };
 		C64733106E43812882568500 /* ProgressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28676DEA8C247291BC00C4 /* ProgressionTests.swift */; };
@@ -37,10 +42,33 @@
 			remoteGlobalIDString = D8C9B3D4256F343EB7B9400A;
 			remoteInfo = Skullset;
 		};
+		74747CB7BDF223EE0D5F779F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBDFD22DB2F97839463962C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 919D5B9191115E4C6699CE79;
+			remoteInfo = SkullsetWidget;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F939A11D8BDF024A18B8F6CD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B60AC68C78D5C987CD7C8967 /* SkullsetWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2FEC72D7B1BCB22805955E4F /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		37C9D58CD62DFB3260C2722A /* SkullsetWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkullsetWidget.entitlements; sourceTree = "<group>"; };
+		389EE6D7F8B88F793EAECCD6 /* SkullsetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullsetWidget.swift; sourceTree = "<group>"; };
 		4BA078757B9A9F34A296C77D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		4E217956B4C65E5C8F114778 /* SkullsetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkullsetApp.swift; sourceTree = "<group>"; };
 		56D7ED09CF4066194E07FBDA /* Skullset.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skullset.entitlements; sourceTree = "<group>"; };
@@ -59,9 +87,13 @@
 		B85BB3C7E6B0D562CFA0E3D9 /* Skullset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skullset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CB6EEDF528D00F4C27E3A3 /* SkullsetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkullsetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD81037796AF1F101F2487CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C6D489456FEC1F7A0A41C2D3 /* SkullsetWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkullsetWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7080AD2E511F3B71258E784 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C8C03527CE7F29D40A39DF54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB28676DEA8C247291BC00C4 /* ProgressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTests.swift; sourceTree = "<group>"; };
 		CB68642F2C68D95B45B62002 /* ProgressChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartsView.swift; sourceTree = "<group>"; };
+		DC82CA7A85F9812E3DB60BCC /* DailySteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
+		EC4B23C3FECB997F07DD4781 /* DailyStepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepsTests.swift; sourceTree = "<group>"; };
 		EDE34836963D845B86BFB118 /* PlateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateCalculator.swift; sourceTree = "<group>"; };
 		F49E62BE33E5B8CB95BFC23F /* RestTimerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +117,7 @@
 		3F98E634C83E9E5698E06A5A /* SkullsetTests */ = {
 			isa = PBXGroup;
 			children = (
+				EC4B23C3FECB997F07DD4781 /* DailyStepsTests.swift */,
 				7301F60F28C288E9704B329D /* PlateCalculatorTests.swift */,
 				CB28676DEA8C247291BC00C4 /* ProgressionTests.swift */,
 				715477ED514872A6735204A1 /* WorkoutReminderTests.swift */,
@@ -127,11 +160,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BB4740421D103ABDCFC9112D /* SkullsetWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C8C03527CE7F29D40A39DF54 /* Info.plist */,
+				37C9D58CD62DFB3260C2722A /* SkullsetWidget.entitlements */,
+				389EE6D7F8B88F793EAECCD6 /* SkullsetWidget.swift */,
+			);
+			path = SkullsetWidget;
+			sourceTree = "<group>";
+		};
+		CE2DC649C4BA34D438DB7E46 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DC82CA7A85F9812E3DB60BCC /* DailySteps.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		CFCEEAAD1203306E3CA94A66 = {
 			isa = PBXGroup;
 			children = (
+				CE2DC649C4BA34D438DB7E46 /* Shared */,
 				078A91D32D3278E931D872EF /* Skullset */,
 				3F98E634C83E9E5698E06A5A /* SkullsetTests */,
+				BB4740421D103ABDCFC9112D /* SkullsetWidget */,
 				E05EA7E61D68456114E79B56 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +194,7 @@
 			children = (
 				B85BB3C7E6B0D562CFA0E3D9 /* Skullset.app */,
 				B9CB6EEDF528D00F4C27E3A3 /* SkullsetTests.xctest */,
+				C6D489456FEC1F7A0A41C2D3 /* SkullsetWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,16 +202,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		919D5B9191115E4C6699CE79 /* SkullsetWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E096C99D11BDF1750623028E /* Build configuration list for PBXNativeTarget "SkullsetWidget" */;
+			buildPhases = (
+				6921D97AE7051CBD7BA180EF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkullsetWidget;
+			packageProductDependencies = (
+			);
+			productName = SkullsetWidget;
+			productReference = C6D489456FEC1F7A0A41C2D3 /* SkullsetWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D8C9B3D4256F343EB7B9400A /* Skullset */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F0CEADF873FA0FADFA399DE /* Build configuration list for PBXNativeTarget "Skullset" */;
 			buildPhases = (
 				036B389E3DADA7B350E67DBC /* Sources */,
 				B968D52C685A4528B73975F3 /* Resources */,
+				F939A11D8BDF024A18B8F6CD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B69034A5F55DEA5E67887B81 /* PBXTargetDependency */,
 			);
 			name = Skullset;
 			packageProductDependencies = (
@@ -193,6 +266,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
+					919D5B9191115E4C6699CE79 = {
+						DevelopmentTeam = UYV646HSVB;
+						ProvisioningStyle = Automatic;
+					};
 					D8C9B3D4256F343EB7B9400A = {
 						DevelopmentTeam = UYV646HSVB;
 						ProvisioningStyle = Automatic;
@@ -218,6 +295,7 @@
 			projectRoot = "";
 			targets = (
 				D8C9B3D4256F343EB7B9400A /* Skullset */,
+				919D5B9191115E4C6699CE79 /* SkullsetWidget */,
 				DA7E552DAF879926DA7D9FDF /* SkullsetTests */,
 			);
 		};
@@ -240,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B01997747EEED0D22FB32E /* DailySteps.swift in Sources */,
 				BC63DD835063AFCAF42934B6 /* HealthStore.swift in Sources */,
 				7059382DAD9EBA21C899E49B /* HistoryView.swift in Sources */,
 				F5EE9F890BFF09486401AFE1 /* Lift.swift in Sources */,
@@ -258,10 +337,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6921D97AE7051CBD7BA180EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				913DB1C785D8BF96C07F5536 /* DailySteps.swift in Sources */,
+				1CD3CD513B9DC0988BCDB691 /* SkullsetWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8496C210E1E5142EFDE3CF20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57930C312498EA313E08AF6F /* DailyStepsTests.swift in Sources */,
 				59BBB5196B1CD3C58381CA35 /* PlateCalculatorTests.swift in Sources */,
 				C64733106E43812882568500 /* ProgressionTests.swift in Sources */,
 				DB95C33013E25CF2680F06C1 /* WorkoutReminderTests.swift in Sources */,
@@ -275,6 +364,11 @@
 			isa = PBXTargetDependency;
 			target = D8C9B3D4256F343EB7B9400A /* Skullset */;
 			targetProxy = 07C7F03E6765F5AC04649A72 /* PBXContainerItemProxy */;
+		};
+		B69034A5F55DEA5E67887B81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 919D5B9191115E4C6699CE79 /* SkullsetWidget */;
+			targetProxy = 74747CB7BDF223EE0D5F779F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -331,6 +425,23 @@
 			};
 			name = Debug;
 		};
+		8A3D578426FB3E692F5E1A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SkullsetWidget/SkullsetWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkullsetWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisnorthfield.skullset.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		A5A3CE6FCE588DCDED80FD9B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -367,7 +478,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UYV646HSVB;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -391,6 +502,23 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		A69AB9ED78A3B740FA35AF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SkullsetWidget/SkullsetWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SkullsetWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisnorthfield.skullset.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -430,7 +558,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = UYV646HSVB;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -508,6 +636,15 @@
 			buildConfigurations = (
 				67D522250E1635FE7FD99E8C /* Debug */,
 				1EC1652B065B99E9080CCB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E096C99D11BDF1750623028E /* Build configuration list for PBXNativeTarget "SkullsetWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A3D578426FB3E692F5E1A99 /* Debug */,
+				A69AB9ED78A3B740FA35AF69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

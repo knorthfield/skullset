@@ -1,6 +1,7 @@
 import Foundation
 import HealthKit
 import Observation
+import WidgetKit
 
 struct BodyweightSample: Identifiable {
     let date: Date
@@ -8,15 +9,17 @@ struct BodyweightSample: Identifiable {
     var id: Date { date }
 }
 
-/// Reads bodyweight from and saves workouts to Apple Health. Every call fails quietly,
+/// Reads bodyweight and steps from, and saves workouts to Apple Health. Every call fails quietly,
 /// so the app works the same when Health is not available or permission is refused.
 @MainActor
 @Observable
 final class HealthStore {
     private let store = HKHealthStore()
     private let bodyMass = HKQuantityType(.bodyMass)
+    private var readTypes: Set<HKObjectType> { [bodyMass, HKQuantityType(.stepCount)] }
 
     private(set) var latestBodyweightKilograms: Double?
+    private(set) var todaySteps: Int?
     /// True after the user has answered the Health prompt. Health does not tell apps if read access was given.
     private(set) var hasRequestedAccess = false
 
@@ -24,17 +27,19 @@ final class HealthStore {
 
     func requestAuthorization() async {
         guard isAvailable else { return }
-        try? await store.requestAuthorization(toShare: [.workoutType()], read: [bodyMass])
+        try? await store.requestAuthorization(toShare: [.workoutType()], read: readTypes)
         await refresh()
     }
 
     /// Never shows a prompt, so it is safe to call at launch.
     func refresh() async {
         guard isAvailable else { return }
-        let status = try? await store.statusForAuthorizationRequest(toShare: [.workoutType()], read: [bodyMass])
+        let status = try? await store.statusForAuthorizationRequest(toShare: [.workoutType()], read: readTypes)
         hasRequestedAccess = status == .unnecessary
         if hasRequestedAccess {
             latestBodyweightKilograms = await bodyweightSamples(limit: 1).first?.kilograms
+            todaySteps = await DailySteps.today(from: store)
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 

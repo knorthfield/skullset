@@ -1,9 +1,11 @@
 import SwiftUI
+import WidgetKit
 
 struct SettingsView: View {
     @AppStorage("unit") private var unit: WeightUnit = .kg
     @AppStorage("plates.kg") private var kilogramPlates = ""
     @AppStorage("plates.lb") private var poundPlates = ""
+    @AppStorage(DailySteps.targetKey, store: DailySteps.defaults) private var stepTarget = DailySteps.defaultTarget
     @Environment(\.dismiss) private var dismiss
     @Environment(HealthStore.self) private var health
 
@@ -29,6 +31,7 @@ struct SettingsView: View {
                 if health.isAvailable {
                     Section {
                         if health.hasRequestedAccess {
+                            Stepper("Daily steps: \(stepTarget.formatted())", value: $stepTarget, in: 1_000...50_000, step: 500)
                             Text("To change access, open the Health app and go to Sharing › Apps › Skullset.")
                                 .foregroundStyle(.secondary)
                         } else {
@@ -39,10 +42,11 @@ struct SettingsView: View {
                     } header: {
                         Text("Apple Health")
                     } footer: {
-                        Text("Skullset reads your bodyweight and saves your workouts.")
+                        Text("Skullset reads your bodyweight and steps, and saves your workouts.")
                     }
                 }
             }
+            .onChange(of: stepTarget) { WidgetCenter.shared.reloadAllTimelines() }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

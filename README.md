@@ -18,7 +18,7 @@ Weights are rounded so you can load them with the plates you choose in Settings.
 
 ## Features
 
-Rest timer with notification, plate calculator, history, progress charts, kg/lb, and Apple Health (reads bodyweight, saves workouts).
+Rest timer with notification, plate calculator, history, progress charts, kg/lb, and Apple Health (reads bodyweight and steps, saves workouts), and a home screen widget with daily steps.
 
 ## Build
 

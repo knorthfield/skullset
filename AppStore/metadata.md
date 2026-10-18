@@ -34,7 +34,8 @@ BUILT FOR THE GYM
 SEE YOUR PROGRESS
 • History of every workout.
 • Charts for each lift.
-• Apple Health: Skullset can read your bodyweight and save your workouts.
+• Apple Health: Skullset can read your bodyweight and steps, and save your workouts.
+• Steps widget: see today's steps and your daily target on your Home Screen.
 
 PRIVATE
 Skullset has no account, no ads and no tracking. Your data stays on your device.
@@ -68,7 +69,7 @@ Data Not Collected.
 
 3. Instructions: no login or setup is needed. Open the app; Workout A shows. Tap a set to log 5 reps; tap again to remove a rep. On the last set, choose the number of reps. Tap "Finish Workout" to see Workout B with the next weights. The History and Progress tabs show past workouts and charts. The gear button on the Workout tab opens Settings, where you can set kg or lb and your plates. To use Apple Health (optional), tap Connect Apple Health in Settings. The app asks for notification permission when you log your first set, because the rest timer sends a notification.
 
-4. External services: none. The app makes no network requests. It uses only Apple frameworks on the device: SwiftData (local storage), HealthKit (optional: reads bodyweight, saves workouts), UserNotifications (rest timer alert) and Swift Charts.
+4. External services: none. The app makes no network requests. It uses only Apple frameworks on the device: SwiftData (local storage), HealthKit (optional: reads bodyweight and steps, saves workouts), WidgetKit (steps widget), UserNotifications (rest timer alert) and Swift Charts.
 
 5. Regional differences: none. The app works the same in all regions.
 

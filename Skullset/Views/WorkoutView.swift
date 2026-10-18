@@ -9,6 +9,7 @@ struct WorkoutView: View {
     @AppStorage("restStartedAt") private var restStartedAt: Double = 0
     @AppStorage("plates.kg") private var kilogramPlates = ""
     @AppStorage("plates.lb") private var poundPlates = ""
+    @AppStorage(DailySteps.targetKey, store: DailySteps.defaults) private var stepTarget = DailySteps.defaultTarget
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
     @State private var isShowingSettings = false
 
@@ -25,6 +26,15 @@ struct WorkoutView: View {
             Group {
                 if let current {
                     List {
+                        if let steps = health.todaySteps {
+                            Section {
+                                ProgressView(value: min(Double(steps) / Double(stepTarget), 1)) {
+                                    Text("\(steps.formatted()) steps")
+                                } currentValueLabel: {
+                                    Text("of \(stepTarget.formatted())")
+                                }
+                            }
+                        }
                         ForEach(current.orderedEntries) { entry in
                             Section {
                                 LiftCard(
@@ -67,7 +77,10 @@ struct WorkoutView: View {
             await health.refresh()
         }
         .onChange(of: scenePhase) {
-            if scenePhase == .active { replanAfterBreak() }
+            if scenePhase == .active {
+                replanAfterBreak()
+                Task { await health.refresh() }
+            }
         }
         .onChange(of: unit) { replanUnstartedWorkout() }
         .onChange(of: kilogramPlates) { replanUnstartedWorkout() }
