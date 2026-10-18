@@ -26,15 +26,6 @@ struct WorkoutView: View {
             Group {
                 if let current {
                     List {
-                        if let steps = health.todaySteps {
-                            Section {
-                                ProgressView(value: min(Double(steps) / Double(stepTarget), 1)) {
-                                    Text("\(steps.formatted()) steps")
-                                } currentValueLabel: {
-                                    Text("of \(stepTarget.formatted())")
-                                }
-                            }
-                        }
                         ForEach(current.orderedEntries) { entry in
                             Section {
                                 LiftCard(
@@ -67,7 +58,20 @@ struct WorkoutView: View {
                 }
             }
             .toolbar {
-                Button("Settings", systemImage: "gearshape") { isShowingSettings = true }
+                if let steps = health.todaySteps {
+                    ToolbarItem(placement: .topBarLeading) {
+                        HStack {
+                            Image(systemName: "figure.walk")
+                            Text("\(steps.formatted()) / \(stepTarget.formatted())")
+                        }
+                        .monospacedDigit()
+                        .fixedSize()
+                            .padding(.horizontal, 8)
+                    }
+                }
+                ToolbarItem {
+                    Button("Settings", systemImage: "gearshape") { isShowingSettings = true }
+                }
             }
             .sheet(isPresented: $isShowingSettings) { SettingsView() }
         }
