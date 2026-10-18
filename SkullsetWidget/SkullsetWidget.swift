@@ -37,6 +37,7 @@ struct StepsProvider: TimelineProvider {
 
 struct StepsWidgetView: View {
     let entry: StepsEntry
+    @Environment(\.widgetFamily) private var family
 
     private var progress: Double {
         guard let steps = entry.steps else { return 0 }
@@ -44,6 +45,37 @@ struct StepsWidgetView: View {
     }
 
     var body: some View {
+        switch family {
+        case .accessoryCircular: lockScreenCircle
+        case .accessoryRectangular: lockScreenRectangle
+        default: homeScreenRing
+        }
+    }
+
+    private var lockScreenCircle: some View {
+        Gauge(value: progress) {
+            Image(systemName: "figure.walk")
+        } currentValueLabel: {
+            Text(entry.steps?.formatted(.number.notation(.compactName)) ?? "—")
+        }
+        .gaugeStyle(.accessoryCircular)
+        .containerBackground(.clear, for: .widget)
+    }
+
+    private var lockScreenRectangle: some View {
+        VStack(alignment: .leading) {
+            Label(entry.steps?.formatted() ?? "—", systemImage: "figure.walk")
+                .font(.headline)
+            Text("of \(entry.target.formatted()) steps")
+                .font(.caption)
+            Gauge(value: progress) { EmptyView() }
+                .gaugeStyle(.accessoryLinearCapacity)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .containerBackground(.clear, for: .widget)
+    }
+
+    private var homeScreenRing: some View {
         ZStack {
             Circle()
                 .stroke(.tint.opacity(0.2), lineWidth: 10)
@@ -52,6 +84,9 @@ struct StepsWidgetView: View {
                 .stroke(.tint, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                 .rotationEffect(.degrees(-90))
             VStack(spacing: 2) {
+                Image(systemName: "figure.walk")
+                    .font(.headline)
+                    .foregroundStyle(.tint)
                 if let steps = entry.steps {
                     Text(steps.formatted())
                         .font(.title3.bold())
@@ -82,6 +117,6 @@ struct StepsWidget: Widget {
         }
         .configurationDisplayName("Steps")
         .description("Today's steps and your daily target.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryRectangular])
     }
 }

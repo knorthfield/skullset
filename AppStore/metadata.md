@@ -35,7 +35,7 @@ SEE YOUR PROGRESS
 • History of every workout.
 • Charts for each lift.
 • Apple Health: Skullset can read your bodyweight and steps, and save your workouts.
-• Steps widget: see today's steps and your daily target on your Home Screen.
+• Steps widgets: see today's steps and your daily target on your Home Screen and Lock Screen.
 
 PRIVATE
 Skullset has no account, no ads and no tracking. Your data stays on your device.
