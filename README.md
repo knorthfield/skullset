@@ -2,6 +2,8 @@
 
 A simple native iOS tracker for Greyskull LP, phrakture's variant. No program choices, no clutter.
 
+[Skullset on the App Store](https://apps.apple.com/app/id6819404778)
+
 - **Workout A:** Overhead Press 3×5+, Chin-ups 3×5+, Squat 3×5+
 - **Workout B:** Bench Press 3×5+, Barbell Row 3×5+, Deadlift 1×5+
 
